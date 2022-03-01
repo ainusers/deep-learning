@@ -24,12 +24,9 @@ def kmeans(X, k, maxIt):
 
     # Run the main k-means algorithm
     while not shouldStop(oldCentroids, centroids, iterations, maxIt):
-        print
-        "iteration: \n", iterations
-        print
-        "dataSet: \n", dataSet
-        print
-        "centroids: \n", centroids
+        print ("iteration: \n", iterations)
+        print ("dataSet: \n", dataSet)
+        print ("centroids: \n", centroids)
         # Save old centroids for convergence test. Book keeping.
         oldCentroids = np.copy(centroids)
         iterations += 1
@@ -74,8 +71,7 @@ def getLabelFromClosestCentroid(dataSetRow, centroids):
         if dist < minDist:
             minDist = dist
             label = centroids[i, -1]
-    print
-    "minDist:", minDist
+    print ("minDist:", minDist)
     return label
 
 
@@ -102,7 +98,5 @@ x4 = np.array([5, 4])
 testX = np.vstack((x1, x2, x3, x4))
 
 result = kmeans(testX, 2, 10)
-print
-"final result:"
-print
-result
+print ("final result:")
+print (result)
